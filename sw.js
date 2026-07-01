@@ -1,4 +1,4 @@
-const CACHE_NAME = 'level-up-v1';
+const CACHE_NAME = 'level-up-v2';
 
 const PRECACHE = [
   './',
@@ -7,6 +7,7 @@ const PRECACHE = [
   './app.js',
   './store.js',
   './manifest.json',
+  './icons/icon.svg',
 ];
 
 self.addEventListener('install', event => {

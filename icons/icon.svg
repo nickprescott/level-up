@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#1a1a2e"/>
+  <!-- Upward arrow shaft -->
+  <rect x="220" y="208" width="72" height="164" rx="12" fill="#e94560"/>
+  <!-- Arrowhead -->
+  <polygon points="256,96 152,240 360,240" fill="#e94560"/>
+  <!-- XP dots (stacked levels) -->
+  <rect x="176" y="388" width="40" height="14" rx="7" fill="#f5a623" opacity="0.9"/>
+  <rect x="236" y="388" width="60" height="14" rx="7" fill="#f5a623" opacity="0.65"/>
+  <rect x="316" y="388" width="24" height="14" rx="7" fill="#f5a623" opacity="0.35"/>
+</svg>
