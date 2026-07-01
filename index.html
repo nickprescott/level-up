@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <meta name="description" content="Track and visualize your personal growth through XP gains across life categories." />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Level Up</title>
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">
+      <h1>Level Up</h1>
+    </header>
+
+    <main id="main-content">
+      <p class="placeholder">Loading...</p>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-view="log">Log</button>
+      <button class="nav-btn" data-view="progress">Progress</button>
+      <button class="nav-btn" data-view="report">Report</button>
+      <button class="nav-btn" data-view="manage">Manage</button>
+    </nav>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
