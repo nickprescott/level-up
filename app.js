@@ -3,7 +3,7 @@ import { store } from './store.js';
 const main = document.getElementById('main-content');
 const navBtns = document.querySelectorAll('.nav-btn');
 
-const CATEGORIES = ['Body', 'Mind', 'Heart', 'Exploration'];
+const CATEGORIES = ['Body', 'Mind', 'Heart'];
 
 let currentView = 'log';
 let manageTab = 'skills';
