@@ -20,6 +20,18 @@ Link a skill to one or more of the overarching Categories: Body, Mind, Heart
 ### Adding activities
 Now that you have some skills defined, you can either pre-populate activities that you know you will be doing in the future, or you can skip this and just log the activities as they occur, which will then allow you to save them as reoccurring activities for easier addition in the future.
 
+![Adding activities screenshot](./readme-images/add-activity.png)
+
+### Viewing your progress
+You can see the XP that you have accumulated for each skill and get notified when you've reached the point that you are advancing to the next tier (beginner, intermediate, advanced).
+
+![Progress view screenshot](./readme-images/progress.png)
+
+### Reporting
+The Report section allows you to see the big picture of your progress: where you are putting more effort, a trend of the XP earned over a period of time (week or month), and which skills have been neglected lately.
+
+![Report screenshot](./readme-images/report.png)
+
 ## Updating app versions
 Updating the app version will attempt to run any data migrations necessary. This should mean that you won't lose data when updating your app version.
 
