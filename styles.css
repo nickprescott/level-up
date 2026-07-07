@@ -8,6 +8,9 @@
   --text-muted: #888;
   --radius: 12px;
   --nav-height: 68px;
+  --tier-beginner: #72cafa;
+  --tier-intermediate: #ff9900;
+  --tier-advanced: #17ba4b;
   /* Safe area insets for notched/gesture-nav phones */
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
@@ -617,21 +620,36 @@ html, body {
   text-overflow: ellipsis;
 }
 
-.skill-card-tier {
+.skill-card-tier-wrap {
+  position: relative;
   flex-shrink: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.skill-card-tier-bg {
+  position: absolute;
+  inset: 0 auto 0 0;
+  display: block;
+   opacity: 0.75; 
+  transition: width 0.3s ease;
+}
+
+.skill-card-tier {
+  position: relative;
+  display: block;
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
-  background: var(--surface-2);
-  border-radius: 20px;
+  color: var(--text);
   padding: 3px 10px;
+  white-space: nowrap;
 }
 
 .skill-card-tier.tier-ready {
   color: var(--accent-2);
-  background: rgba(245, 166, 35, 0.15);
 }
 
 .progress-bar-wrap {

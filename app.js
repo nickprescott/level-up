@@ -214,7 +214,7 @@ function renderSkillSplitRows(linkedSkillIds = [], defaultXp = 5) {
 
 const XP_PER_LEVEL = 100;
 
-const TIER_CAP = { Beginner: 5, Intermediate: 10, Advanced: Infinity };
+const TIER_CAP = { Beginner: 5, Intermediate: 10, Advanced: 10 };
 
 function skillXpFromLogs(skill, logs) {
   let total = 0;
@@ -260,6 +260,12 @@ function renderProgress() {
   `;
 }
 
+const TIER_COLORS = {
+  Beginner:     'var(--tier-beginner)',
+  Intermediate: 'var(--tier-intermediate)',
+  Advanced:     'var(--tier-advanced)',
+};
+
 function renderSkillCard(skill, logs) {
   const totalXp = skillXpFromLogs(skill, logs);
   const xpThisTier = xpInCurrentTier(skill, totalXp);
@@ -270,16 +276,22 @@ function renderSkillCard(skill, logs) {
   const xpInLevel = xpProgress(xpThisTier);
   const pct = atCap ? 100 : Math.round((xpInLevel / XP_PER_LEVEL) * 100);
 
-  const label = `${skill.tier} ${level}`;
+  const label = `${skill.tier}`;
   const nextLabel = atCap
     ? (skill.tier === 'Beginner' ? 'Intermediate 1' : 'Advanced 1')
     : `${skill.tier} ${level + 1}`;
+
+  const tierColor = TIER_COLORS[skill.tier] || 'var(--accent)';
+  const tierPct = atCap ? 100 : Math.round((level / cap) * 100);
 
   return `
     <div class="skill-card">
       <div class="skill-card-top">
         <span class="skill-card-name">${esc(skill.name)}</span>
-        <span class="skill-card-tier ${atCap ? 'tier-ready' : ''}">${label}</span>
+        <span class="skill-card-tier-wrap">
+          <span class="skill-card-tier-bg" style="width:${tierPct}%;background:${tierColor}"></span>
+          <span class="skill-card-tier ${atCap ? 'tier-ready' : ''}">${label}</span>
+        </span>
       </div>
       <div class="progress-bar-wrap">
         <div class="progress-bar-fill ${atCap ? 'bar-ready' : ''}" style="width:${pct}%"></div>

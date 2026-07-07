@@ -1,24 +1,37 @@
 const STORAGE_KEY = 'level-up-data';
+const SCHEMA_VERSION = 1;
 
 const DEFAULT_STATE = {
+  schemaVersion: SCHEMA_VERSION,
   skills: [],
   activities: [],
   logs: [],
   accomplishments: [],
 };
 
+function runMigrations(data) {
+  const v = data.schemaVersion ?? 0;
+
+  // v0 → v1: no structural changes; just stamp the version
+  // Add future migrations here as: if (v < N) { ... }
+
+  data.schemaVersion = SCHEMA_VERSION;
+  return data;
+}
+
 function load() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return structuredClone(DEFAULT_STATE);
-    return { ...structuredClone(DEFAULT_STATE), ...JSON.parse(raw) };
+    const data = { ...structuredClone(DEFAULT_STATE), ...JSON.parse(raw) };
+    return runMigrations(data);
   } catch {
     return structuredClone(DEFAULT_STATE);
   }
 }
 
 function save(state) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...state, schemaVersion: SCHEMA_VERSION }));
 }
 
 let _state = load();
