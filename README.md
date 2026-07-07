@@ -33,5 +33,5 @@ python -m http.server 8080
 Now you can open a browser and navigate to localhost:8080 which will bring up your version of the app
 
 ## Current Limitations
-- Clearing you local storage will remove all of your data with no option to recover
+- Clearing your local storage will remove all of your data with no option to recover
 - No bulk data creation
