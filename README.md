@@ -24,7 +24,7 @@ Now that you have some skills defined, you can either pre-populate activities th
 Updating the app version will attempt to run any data migrations necessary. This should mean that you won't lose data when updating your app version.
 
 ## Testing
-If you have cloned or forked this repo and working on it locally, you can easily test it by setting up a local server. This avoids all of the CORS issues.
+If you have cloned or forked this repo and are working on it locally, you can easily test it by setting up a local server. This avoids the CORS issues.
 
 Navigate to the application directory and run:
 ```
